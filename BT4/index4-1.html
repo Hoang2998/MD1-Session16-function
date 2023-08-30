@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countCharacters(str) {
+                const charCount = [];
+                for (const char of str) {
+                    const index = charCount.findIndex((item) => item[0] === char);
+                    if (index !== -1) {
+                        charCount[index][1] = charCount[index][1] + 1;
+                    } else {
+                        charCount.push([char, 1]);
+                    }
+                }
+                charCount.forEach((item) => {
+                    console.log(`${item[0]} xuất hiện ${item[1]} lần`);
+                });
+            }
+    </script>
+</body>
+</html>
